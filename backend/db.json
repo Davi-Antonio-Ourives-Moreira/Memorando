@@ -31,9 +31,30 @@
     {
       "id": "6",
       "descricao": "Ler",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "categoria": "Estudos",
       "prioridade": "Alta"
+    },
+    {
+      "id": null,
+      "descricao": "Terminar memorando",
+      "statusFinalizado": false,
+      "categoria": "Estudos",
+      "prioridade": "Normal"
+    },
+    {
+      "id": null,
+      "descricao": "fsfafafafa",
+      "statusFinalizado": false,
+      "categoria": "Casa",
+      "prioridade": "Alta"
+    },
+    {
+      "id": null,
+      "descricao": "sfdsfqa",
+      "statusFinalizado": false,
+      "categoria": "Casa",
+      "prioridade": "Normal"
     }
   ]
 }
