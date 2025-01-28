@@ -5,13 +5,15 @@ import { TarefaService } from '../../services/tarefa.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MensagemComponent } from '../../components/mensagem/mensagem.component';
+import { cardHoverAnimations } from '../../animations/cardHover';
 
 @Component({
   selector: 'app-listas-tarefas',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule, MensagemComponent],
   templateUrl: './listas-tarefas.component.html',
-  styleUrl: './listas-tarefas.component.css'
+  styleUrl: './listas-tarefas.component.css',
+  animations: [cardHoverAnimations]
 })
 export class ListasTarefasComponent {
   listaTarefas: Tarefa[] = [];
@@ -19,6 +21,7 @@ export class ListasTarefasComponent {
   categoria: string = '';
   validado: boolean = false;
   formulario!: FormGroup;
+  indexTarefa = -1;
   public group: any;
 
   constructor(
