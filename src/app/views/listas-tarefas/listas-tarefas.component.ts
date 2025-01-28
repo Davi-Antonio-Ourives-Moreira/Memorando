@@ -6,13 +6,14 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MensagemComponent } from '../../components/mensagem/mensagem.component';
 import { cardHoverAnimations } from '../../animations/cardHover';
+import { formularioVisivelAnimations } from '../../animations/formularioVisivel';
 @Component({
   selector: 'app-listas-tarefas',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule, MensagemComponent],
   templateUrl: './listas-tarefas.component.html',
   styleUrl: './listas-tarefas.component.css',
-  animations: [cardHoverAnimations]
+  animations: [cardHoverAnimations, formularioVisivelAnimations]
 })
 export class ListasTarefasComponent {
   listaTarefas: Tarefa[] = [];

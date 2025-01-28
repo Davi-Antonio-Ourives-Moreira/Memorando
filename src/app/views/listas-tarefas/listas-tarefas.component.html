@@ -6,7 +6,10 @@
   </div>
   <form class="formulario ff-prompt"
     [formGroup]="formulario"
-    *ngIf="formAberto">
+    *ngIf="formAberto"
+    @shownState
+    >
+
     <label for="descricao">Descrição da tarefa</label>
     <input required
       type="text"

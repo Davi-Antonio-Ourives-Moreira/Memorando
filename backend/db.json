@@ -4,8 +4,15 @@
       "id": "ufv9vv8j6",
       "descricao": "Tomar banho :)",
       "categoria": "Casa",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "prioridade": "Baixa"
+    },
+    {
+      "id": "7g3xxi1eq",
+      "descricao": "Almoçar",
+      "statusFinalizado": false,
+      "categoria": "Casa",
+      "prioridade": "Normal"
     }
   ]
 }
