@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MensagemComponent } from '../../components/mensagem/mensagem.component';
 import { cardHoverAnimations } from '../../animations/cardHover';
-
 @Component({
   selector: 'app-listas-tarefas',
   standalone: true,
@@ -65,7 +64,11 @@ export class ListasTarefasComponent {
   }
 
   criarTarefa() {
-    this.service.criar(this.formulario.value).subscribe({
+    const formularioLocal = this.formulario.value;
+
+    formularioLocal.id = this.gerarIdMemoria();
+
+    this.service.criar(formularioLocal).subscribe({
       complete: () => this.atualizarComponente(),
     });
   }
@@ -93,7 +96,9 @@ export class ListasTarefasComponent {
   }
 
   recarregarComponente() {
-    this.router.navigate(['/listaTarefas']);
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([this.router.url]);
   }
 
   atualizarComponente() {
@@ -145,5 +150,9 @@ export class ListasTarefasComponent {
       this.validado = true;
       return 'form-tarefa';
     }
+  }
+
+  gerarIdMemoria(): string{
+    return Math.random().toString(36).substr(2, 9);
   }
 }
