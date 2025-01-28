@@ -10,7 +10,7 @@
     {
       "id": "7g3xxi1eq",
       "descricao": "Almoçar",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "categoria": "Casa",
       "prioridade": "Normal"
     }
