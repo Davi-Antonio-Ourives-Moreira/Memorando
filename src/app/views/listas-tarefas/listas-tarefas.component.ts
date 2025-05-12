@@ -17,12 +17,14 @@ import { formularioVisivelAnimations } from '../../animations/formularioVisivel'
 })
 export class ListasTarefasComponent {
   listaTarefas: Tarefa[] = [];
+  listaTarefasFiltradas: Tarefa[] = [];
   formAberto: boolean = false;
   categoria: string = '';
   validado: boolean = false;
   formulario!: FormGroup;
   indexTarefa = -1;
   public group: any;
+  campoPesquisa!: string;
 
   constructor(
     private service: TarefaService,
@@ -41,8 +43,21 @@ export class ListasTarefasComponent {
   ngOnInit(): Tarefa[] {
     this.service.listar(this.categoria).subscribe((listaTarefas) => {
       this.listaTarefas = listaTarefas;
+      this.listaTarefasFiltradas = listaTarefas;
     });
-    return this.listaTarefas;
+    return this.listaTarefasFiltradas;
+  }
+
+  pesquisarTarefas(descricao: string){
+    this.campoPesquisa = descricao.trim().toLowerCase();
+
+    if (descricao){
+      this.listaTarefasFiltradas = this.listaTarefas.filter(tarefa =>
+        tarefa.descricao.toLowerCase().includes(this.campoPesquisa)
+      );
+    } else{
+      this.listaTarefasFiltradas = this.listaTarefas;
+    }
   }
 
   mostrarOuEsconderFormulario() {
@@ -131,6 +146,7 @@ export class ListasTarefasComponent {
   listarAposCheck() {
     this.service.listar(this.categoria).subscribe((listaTarefas) => {
       this.listaTarefas = listaTarefas;
+      this.listaTarefasFiltradas = listaTarefas;
     });
   }
 

@@ -71,10 +71,13 @@
     <img src="/assets/imagens/ilustracao-Tarefas.png"
         alt="Ilustração de um ambiente com mesa, computador, quadro e um vaso com planta">
   </div>
-  <div *ngIf="listaTarefas.length > 0, else semTarefas">
+  <div class="pesquisa">
+    <input type="search" id="campo-pesquisa" placeholder="Busque suas tarefas" [(ngModel)]="campoPesquisa" (keyup)="pesquisarTarefas(campoPesquisa)">
+  </div>
+  <div *ngIf="listaTarefasFiltradas.length > 0, else semTarefas">
     <div
       class="lista-tarefas card-{{ tarefa.categoria }}"
-      *ngFor="let tarefa of listaTarefas; let i = index"
+      *ngFor="let tarefa of listaTarefasFiltradas; let i = index"
       (mouseover)="indexTarefa = i"
       [@highlightedState]="indexTarefa === i ? 'highlighted' : 'default'"
       >
