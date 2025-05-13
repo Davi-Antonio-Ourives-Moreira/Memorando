@@ -10,6 +10,6 @@ export const animacaoPesquisa = trigger('animacaoPesquisa', [
     ]))
   ]),
   transition(':leave', [
-    animate('400ms ease-out', style({opacity: 0, width: 0}))
+    animate('400ms cubic-bezier(.18,.79,.83,.67)', style({opacity: 0, width: 0}))
   ])
 ]);
