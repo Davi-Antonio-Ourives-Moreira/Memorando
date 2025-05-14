@@ -5,6 +5,7 @@
     </button>
   </div>
   <form class="formulario ff-prompt"
+    [@formInvalid]="formulario.value"
     [@formButton]="formulario.valid ? 'valid' : 'invalid'"
     [formGroup]="formulario"
     *ngIf="formAberto"

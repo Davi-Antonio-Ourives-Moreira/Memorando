@@ -9,13 +9,14 @@ import { cardHoverAnimations } from '../../animations/cardHover';
 import { formularioVisivelAnimations } from '../../animations/formularioVisivel';
 import { animacaoPesquisa } from '../../animations/animacaoPesquisa';
 import { formButtonAnimation } from '../../animations/formButton';
+import { formInvalid } from '../../animations/formInvalid';
 @Component({
   selector: 'app-listas-tarefas',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule, MensagemComponent],
   templateUrl: './listas-tarefas.component.html',
   styleUrl: './listas-tarefas.component.css',
-  animations: [cardHoverAnimations, formularioVisivelAnimations, animacaoPesquisa, formButtonAnimation]
+  animations: [cardHoverAnimations, formularioVisivelAnimations, animacaoPesquisa, formButtonAnimation, formInvalid]
 })
 export class ListasTarefasComponent {
   listaTarefas: Tarefa[] = [];
